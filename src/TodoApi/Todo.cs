@@ -1,8 +1,8 @@
 namespace TodoApi;
 
-public record Todo(int Id, string Title, bool Done = false);
+public record Todo(int Id, string Title, bool Done = false, IReadOnlyList<string>? Tags = null);
 
-public record CreateTodo(string Title);
+public record CreateTodo(string Title, IReadOnlyList<string>? Tags = null);
 
 public class TodoStore
 {
